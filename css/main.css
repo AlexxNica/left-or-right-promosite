@@ -101,9 +101,15 @@ h1 {
   border: 1px solid #FF665C;
   border-radius: 4px;
   height: 48px;
-  width: 100%;
+  width: 65%;
+  float: left;
   padding-right: 12px;
-  padding-left: 12px; }
+  padding-left: 12px;
+  opacity: 0.5; }
+  @media screen and (max-width: 480px) {
+    .field {
+      width: 100%;
+      clear: both; } }
   .field::-webkit-input-placeholder {
     color: #FF665C; }
   .field::-moz-placeholder {
@@ -113,15 +119,26 @@ h1 {
   .field:-ms-input-placeholder {
     color: #FF665C; }
 
+.field:focus {
+  opacity: 1; }
+
 .button {
   border: 0px;
   height: 48px;
-  width: 100%;
+  width: 30%;
+  float: right;
   border-radius: 4px;
   background-color: #FF665C;
-  margin-top: 16px;
   color: #F5F093;
   font-weight: 800; }
+  @media screen and (max-width: 480px) {
+    .button {
+      width: 100%;
+      margin-top: 16px;
+      clear: both; } }
+
+.button:active {
+  background-color: #AB2920; }
 
 .yellow {
   color: #F5F093; }

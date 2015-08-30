@@ -4,7 +4,6 @@
   <meta charset=utf-8 />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" type="text/css" href="css/main.css">
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <title>Left or Right</title>
 </head>
 <body>
@@ -31,7 +30,6 @@
 </div>
 <div id="down-outer-wrapper">
 <div id="down-wrapper" class="item-wrapper">
-
   <div id="down" class="item">
     <div id="heart"></div>
     <h1 class="orange">Sign up for goodies.</h1>
@@ -39,8 +37,9 @@
       AND GET <span class="bold">EARLY ACCESS</span> TO THE APP
     </p>
 
-		<form action="https://nameless-plains-3895.herokuapp.com" method="post" id="email-form">
-			<input class="field" type="text" name="email" placeholder="E-mail address">
+		<form accept-charset="UTF-8" action="https://formkeep.com/f/5c2862ca7157" method="POST" id="form">
+      <input type="hidden" name="utf8" value="✓">
+			<input class="field" type="email" name="email" placeholder="E-mail address">
 			<button type="submit" class="button" type="button">SEND!</button>
 			</form>
 		</div>
@@ -48,35 +47,3 @@
 </div>
 </body>
 </html>
-
-<script type='text/javascript'>
-    $("#email-form").submit(function(event) {
-      event.preventDefault();
-
-      var $form = $(this),
-          url = $form.attr('action'),
-          email = $form.find('input[name="email"]').val(),
-
-      if (!email) {
-        $('.button').addClass('button--shake');
-        setTimeout(function () {
-          $('.button').removeClass('button--shake');
-        }, 500);
-        return;
-      }
-
-      var posting = $.post(url, {
-        email: email
-      });
-
-      $('#email-form').addClass('email-form--submitted');
-      setTimeout(function () {
-        $('.button').addClass('contact-form-button--bounce');
-        $('.contact-form-thanks--hidden').removeClass('contact-form-thanks--hidden');
-      }, 500);
-
-      posting.done(function(data) {
-      });
-    });
-});
-</script>

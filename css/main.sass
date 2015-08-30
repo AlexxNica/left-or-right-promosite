@@ -5,6 +5,7 @@
 
 $font-stack: 'Open Sans', sans-serif
 $orange-color: #FF665C
+$orange-down-color: #AB2920
 $yellow-color: #F5F093
 $white-color: #FFFFFF
 $green-color: #38817A
@@ -72,22 +73,43 @@ h1
   border: 1px solid $orange-color
   border-radius: 4px
   height: 48px
-  width: 100%
+
+  width: 65%
+  float: left
+
+  @include media($mobile)
+    width: 100%
+    clear: both
 
   @include placeholder
     color: $orange-color
 
   @include padding(null 12px null 12px)
 
+  opacity: 0.5
+
+.field:focus
+  opacity: 1
+
 .button
   border: 0px
   height: 48px
-  width: 100%
+
+  width: 30%
+  float: right
+
+  @include media($mobile)
+    width: 100%
+    @include margin(16px null null null)
+    clear: both
+
   border-radius: 4px
   background-color: $orange-color
-  @include margin(16px null null null)
   color: $yellow-color
   font-weight: 800
+
+.button:active
+  background-color: $orange-down-color
 
 .yellow
   color: $yellow-color
