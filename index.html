@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <title>Left or Right</title>
+</head>
+<body>
+  <div id="up-outer-wrapper">
+    <div id="up-wrapper" class="item-wrapper">
+  <div id="up" class="item">
+    <div id="logo"></div>
+    <h1>Shopping<br />made easy.</h1>
+    <p class="yellow">
+      COMMING TO <span class="bold">IPHONE</span> THIS HOLIDAY SEASON
+    </p>
+    <p>
+      Sign up to become beta-tester of my new app, at your service this Christmas.
+    </p>
+    <p>
+      A fashionable way to give and get instant, personal and stylish advice through your smart phone.
+    </p>
+    <div id="signature"></div>
+    <p class="yellow">
+      SOFI FAHRMAN
+    </p>
+  </div>
+  </div>
+</div>
+<div id="down-outer-wrapper">
+<div id="down-wrapper" class="item-wrapper">
+
+  <div id="down" class="item">
+    <div id="heart"></div>
+    <h1 class="orange">Sign up for goodies.</h1>
+    <p class="green">
+      AND GET <span class="bold">EARLY ACCESS</span> TO THE APP
+    </p>
+
+		<form action="https://nameless-plains-3895.herokuapp.com" method="post" id="email-form">
+			<input class="field" type="text" name="email" placeholder="E-mail address">
+			<button type="submit" class="button" type="button">SEND!</button>
+			</form>
+		</div>
+  </div>
+</div>
+</body>
+</html>
+
+<script type='text/javascript'>
+    $("#email-form").submit(function(event) {
+      event.preventDefault();
+
+      var $form = $(this),
+          url = $form.attr('action'),
+          email = $form.find('input[name="email"]').val(),
+
+      if (!email) {
+        $('.button').addClass('button--shake');
+        setTimeout(function () {
+          $('.button').removeClass('button--shake');
+        }, 500);
+        return;
+      }
+
+      var posting = $.post(url, {
+        email: email
+      });
+
+      $('#email-form').addClass('email-form--submitted');
+      setTimeout(function () {
+        $('.button').addClass('contact-form-button--bounce');
+        $('.contact-form-thanks--hidden').removeClass('contact-form-thanks--hidden');
+      }, 500);
+
+      posting.done(function(data) {
+      });
+    });
+});
+</script>
