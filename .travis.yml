@@ -1,0 +1,9 @@
+deploy:
+  provider: s3
+  access_key_id: AKIAJ4LGIPSGNZ2FLMBA
+  secret_access_key:
+    secure: dcYRQnSRvEdrhoF5uOtmQ164cdHPtpiS9qTyEgG85RqSQjvgbU4/7uBTUyQQCLNizbBp+ZLP0W1IKMjUZOz8eMAgMzBlifnVWFsJfHkXDMxRbeObFbDPIl6MRR4JqSgHPYRf1dDtuCQ2LZ5lywRCGjVPWkRLcgMx6Lov2wjTMo0eN3FJIiE4qQWO4OJ9NJ9L9skA+ZKQoTEdG6U+YRDowVzuXoP9WQYSCC7m2pGnmZ+In51NMMqplEzgMwO4GCDJ410m/IdKxGUovOeAHd/cVXuK1LhNj5UeyzHoc+A36AQPkVS0t4BrdCz5n84WwNxiCNx/lwAyf9owSYnwJZaE1mlg+iEbRU3yFipmo4GmNzMGIi8JzbyR3EhK+dYjEQ1AE92hLAa7dyyEbTYzQtZPbxboPFLAv8uWA/PAqBfUHbCs/mo69HVvy2iRW/CLVTjZdBwyoR3cZKTr//8Ctl5gBrs3UtF5WRZB16g7Wo84KmVwk5LvaPNuE+J0n5+7WK0lY2UHqqsQSO/A0KnfmEHtxHp/PE5xQX/LTiZm1Cnyu0LWxipBgQEXLcEjaXseiMpRJsBvAKZ1xeAct4leTkV4Dmwtoib0SVKu34OxBsoiVyUGkUnKL8jP4Kt0n7RoonCSoR2qsEpsnjLsYCJz7r3GCOwojMhn/qLLPstVa1m6nwo=
+  bucket: left-or-right
+  acl: private
+  on:
+    repo: madebybowtie/left-or-right-promosite
